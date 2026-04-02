@@ -1,3 +1,5 @@
+import type { LucideIcon } from "lucide-react";
+
 import { TypingWord } from "@/components/TypingWord";
 
 export type HeroPhrase = {
@@ -18,6 +20,8 @@ export interface HeroProps {
   secondaryButtonText: string;
   secondaryButtonHref?: string;
   sections: {
+    icon: LucideIcon;
+    iconClassName?: string;
     title: string;
     text: string;
   }[];
@@ -82,19 +86,29 @@ export default function Hero({
         </div>
 
         <div className="mt-10 grid w-full max-w-3xl grid-cols-1 sm:grid-cols-3 gap-3">
-          {sections.map((section, i) => (
-            <div
-              key={i}
-              className="rounded-2xl bg-white/70 ring-1 ring-blue-200/70 p-4 text-left shadow-sm backdrop-blur dark:bg-slate-900/40 dark:ring-blue-500/20"
-            >
-              <div className="text-sm font-semibold text-slate-900 dark:text-white">
-                {section.title}
+          {sections.map((section, i) => {
+            const Icon = section.icon;
+            return (
+              <div
+                key={i}
+                className="rounded-2xl bg-white/70 ring-1 ring-blue-200/70 p-4 text-left shadow-sm backdrop-blur dark:bg-slate-900/40 dark:ring-blue-500/20"
+              >
+                <Icon
+                  aria-hidden="true"
+                  className={
+                    section.iconClassName ??
+                    "mb-3 h-8 w-8 text-blue-700 dark:text-sky-300"
+                  }
+                />
+                <div className="text-sm font-semibold text-slate-900 dark:text-white">
+                  {section.title}
+                </div>
+                <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                  {section.text}
+                </div>
               </div>
-              <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                {section.text}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -3,6 +3,19 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Features from "@/components/Features";
 import CTA from "@/components/CTA";
+import {
+  Palette,
+  Code2,
+  Megaphone,
+  Headset,
+  CalendarClock,
+  Gauge,
+  LifeBuoy,
+  Sparkles,
+  Smartphone,
+  Zap,
+  HeartHandshake,
+} from "lucide-react";
 
 export default function Home() {
   return (
@@ -28,9 +41,27 @@ export default function Home() {
         secondaryButtonText="Посмотреть услуги"
         secondaryButtonHref="#services"
         sections={[
-          { title: "Сроки", text: "Лендинг — от 7 дней" },
-          { title: "Производительность", text: "Быстрая загрузка и SEO‑база" },
-          { title: "Поддержка", text: "Развитие после запуска" },
+          {
+            icon: CalendarClock,
+            iconClassName:
+              "mb-3 h-8 w-8 text-blue-700 dark:text-sky-300",
+            title: "Сроки",
+            text: "Лендинг — от 7 дней",
+          },
+          {
+            icon: Gauge,
+            iconClassName:
+              "mb-3 h-8 w-8 text-indigo-600 dark:text-indigo-300",
+            title: "Производительность",
+            text: "Быстрая загрузка и SEO‑база",
+          },
+          {
+            icon: LifeBuoy,
+            iconClassName:
+              "mb-3 h-8 w-8 text-cyan-600 dark:text-cyan-300",
+            title: "Поддержка",
+            text: "Развитие после запуска",
+          },
         ]}
       />
 
@@ -47,22 +78,30 @@ export default function Home() {
         title="Наши услуги"
         items={[
           {
-            icon: "🎨",
+            icon: Palette,
+            iconClassName:
+              "mb-4 h-16 w-16 text-blue-700 dark:text-sky-300",
             title: "Дизайн сайтов",
             text: "Современный адаптивный дизайн, отражающий идею вашего бренда.",
           },
           {
-            icon: "💻",
+            icon: Code2,
+            iconClassName:
+              "mb-4 h-16 w-16 text-indigo-600 dark:text-indigo-300",
             title: "Разработка",
             text: "Верстка и программирование, быстрый и современный стек технологий.",
           },
           {
-            icon: "📈",
+            icon: Megaphone,
+            iconClassName:
+              "mb-4 h-16 w-16 text-cyan-600 dark:text-cyan-300",
             title: "Продвижение",
             text: "Техническая оптимизация и базовая SEO‑поддержка для роста.",
           },
           {
-            icon: "🤝",
+            icon: Headset,
+            iconClassName:
+              "mb-4 h-16 w-16 text-sky-700 dark:text-blue-300",
             title: "Сопровождение",
             text: "Долгосрочная поддержка и развитие вашего сайта.",
           },
@@ -74,18 +113,30 @@ export default function Home() {
         title="Почему выбирают нас"
         items={[
           {
+            icon: Sparkles,
+            iconClassName:
+              "mt-0.5 h-8 w-8 shrink-0 text-blue-700 dark:text-sky-300",
             title: "Минимализм & Эстетика",
             text: "Сдержанный, современный внешний вид без лишних деталей.",
           },
           {
+            icon: Smartphone,
+            iconClassName:
+              "mt-0.5 h-8 w-8 shrink-0 text-indigo-600 dark:text-indigo-300",
             title: "Адаптивность",
             text: "Ваш сайт отлично выглядит на любом устройстве.",
           },
           {
+            icon: Zap,
+            iconClassName:
+              "mt-0.5 h-8 w-8 shrink-0 text-cyan-600 dark:text-cyan-300",
             title: "Скорость разработки",
             text: "Быстро запускаем проекты, не жертвуя качеством.",
           },
           {
+            icon: HeartHandshake,
+            iconClassName:
+              "mt-0.5 h-8 w-8 shrink-0 text-sky-700 dark:text-blue-300",
             title: "Человеческий подход",
             text: "Внимание к деталям и дружелюбная коммуникация.",
           },
